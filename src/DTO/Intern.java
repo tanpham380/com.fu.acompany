@@ -65,7 +65,7 @@ public class Intern {
                 sc = new Scanner(System.in);
                 System.out.println("Input Semester for Staff");
                 this.Semester= sc.nextLine();
-                if(Semester.isEmpty()||Semester.matches(StringInput)==false) throw new Exception();
+                if(Semester.isEmpty()) throw new Exception();
                 sc = new Scanner(System.in);
                 System.out.println("Input University for Staff");
                 this.University= sc.nextLine();

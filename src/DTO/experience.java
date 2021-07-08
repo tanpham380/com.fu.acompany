@@ -46,7 +46,7 @@ public experience(){
            do {
                Flag=false;
                try{
-               System.out.println("enter information");
+               System.out.println("enter year of experience ");
                Scanner sc = new Scanner(System.in);
                String s= sc.next();
                 this.ExpInYear=Integer.parseInt(s);

@@ -23,7 +23,7 @@ public class candidates {
     protected String BirthDate;
     protected String Address;
     protected String Phone;
-    protected candidates candidates;
+    protected  experience experience;
     protected fresher fresher;
     protected Intern Intern;
     public candidates(){
@@ -33,19 +33,19 @@ public class candidates {
         BirthDate="";
         Address="";
         Phone="";
-        candidates=null;
+        experience=null;
         fresher=null;
         Intern=null;
     }
 
-    public candidates(String Id, String Firstname, String lastname, String BirthDate, String Address, String Phone, candidates candidates, fresher fresher, Intern Intern) {
+    public candidates(String Id, String Firstname, String lastname, String BirthDate, String Address, String Phone, experience experience, fresher fresher, Intern Intern) {
         this.Id = Id;
         this.Firstname = Firstname;
         this.lastname = lastname;
         this.BirthDate = BirthDate;
         this.Address = Address;
         this.Phone = Phone;
-        this.candidates = candidates;
+        this.experience = experience;
         this.fresher = fresher;
         this.Intern = Intern;
     }
@@ -98,12 +98,12 @@ public class candidates {
         this.Phone = Phone;
     }
 
-    public candidates getCandidates() {
-        return candidates;
+    public experience getexperience() {
+        return experience;
     }
 
-    public void setCandidates(candidates candidates) {
-        this.candidates = candidates;
+    public void setexperience(experience experience) {
+        this.experience = experience;
     }
 
     public fresher getFresher() {
@@ -128,7 +128,7 @@ public class candidates {
             flag = false;
             try {
                 sc = new Scanner(System.in);
-                System.out.println("input ID' Ower:");
+                System.out.println("input ID' Staff:");
                 Id = sc.nextLine();
                 Id = toTitleCase(Id);
                 if (Id.isEmpty() && Id == null) {
@@ -157,7 +157,7 @@ public class candidates {
                 if(Firstname.isEmpty()||Firstname.matches(StringInput)==false) throw new Exception();
                 Firstname=FormatForm.toTitleCase(Firstname);
                 sc = new Scanner(System.in);
-                System.out.println("Input Firstname for Staff");
+                System.out.println("Input lastname for Staff");
                 this.lastname= sc.nextLine();
                 if(lastname.isEmpty()||lastname.matches(StringInput)==false) throw new Exception();
                 lastname=FormatForm.toTitleCase(lastname);
@@ -216,17 +216,19 @@ public class candidates {
     }
     public void out(){
         System.out.println("ID: "+Id );
-        System.out.println("Firstname: "+Firstname + "Lastname : "+lastname );
+        System.out.println("Name: "+Firstname +lastname);
         System.out.println("Phone: "+BirthDate );
         System.out.println("Phone: "+Phone );
         System.out.println("Phone: "+Address );
-        if(candidates != null) candidates.out();
+        if(experience != null) experience.Out();
         if(fresher != null) fresher.Out();
         if(Intern != null) Intern.out();
     }
     @Override
     public String toString() {
-        return "candidates{" + "Id=" + Id + ", Firstname=" + Firstname + ", lastname=" + lastname + ", BirthDate=" + BirthDate + ", Address=" + Address + ", Phone=" + Phone + ", candidates=" + candidates + ", fresher=" + fresher + ", Intern=" + Intern + '}';
+        return "candidates{" + "Id=" + Id + ", Firstname=" + Firstname + ", lastname=" 
+                + lastname + ", BirthDate=" + BirthDate + ", Address=" + Address + ", Phone=" + Phone +
+                ", experience="  + experience + ", fresher=" + fresher + ", Intern=" + Intern + '}';
     }
     
 }

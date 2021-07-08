@@ -95,7 +95,7 @@ public class fresher {
                 sc = new Scanner(System.in);
                 System.out.println("Input Address for Campus");
                 this.Education= sc.nextLine();
-                if(Education.isEmpty()||Education.matches(StringInput)==false) throw new Exception();
+                if(Education.isEmpty()) throw new Exception();
             Education=FormatForm.toTitleCase(Education);
             }catch(NoSuchElementException e){
             System.out.println("Wrong Format");
